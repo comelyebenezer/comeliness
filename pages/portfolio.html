@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Comeliness</title>
+  <meta name="description" content="Explore our portfolio of successful projects — government portals, fintech apps, and enterprise platforms.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
+  <style>
+    .portfolio-filter {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 10px 24px;
+      background: transparent;
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
+      color: var(--grey-400);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+    .portfolio-full-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .portfolio-full-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--grey-900);
+      border: 1px solid var(--glass-border);
+      transition: all 0.4s var(--transition);
+      cursor: pointer;
+      aspect-ratio: 16/10;
+    }
+    .portfolio-full-card.featured {
+      grid-column: 1 / -1;
+      aspect-ratio: 21/9;
+    }
+    .portfolio-full-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.6s var(--transition);
+    }
+    .portfolio-full-card:hover .portfolio-full-bg {
+      transform: scale(1.05);
+    }
+    .portfolio-full-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+      background-image: 
+        radial-gradient(circle at 25% 25%, var(--grey-600) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, var(--grey-600) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    .portfolio-full-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 36px;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+      z-index: 1;
+    }
+    .portfolio-full-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .portfolio-full-card.featured .portfolio-full-content h3 {
+      font-size: 2rem;
+    }
+    .portfolio-full-content p {
+      font-size: 0.92rem;
+      color: var(--grey-400);
+      max-width: 500px;
+    }
+    .portfolio-full-tags {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .portfolio-full-tag {
+      padding: 4px 12px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--grey-300);
+    }
+    .portfolio-full-card:hover {
+      border-color: var(--grey-600);
+      transform: translateY(-4px);
+    }
+    .portfolio-cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+    @media (max-width: 768px) {
+      .portfolio-full-grid {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-full-card.featured {
+        grid-column: auto;
+        aspect-ratio: 16/10;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="page-transition"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="logo">Comeliness</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label fade-up">Our Work</span>
+      <h1 class="fade-up fade-up-delay-1">Portfolio</h1>
+      <p class="fade-up fade-up-delay-2">A showcase of projects that demonstrate our expertise and commitment to excellence.</p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section">
+    <div class="container">
+      <div class="portfolio-filter fade-up">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Government</button>
+        <button class="filter-btn">Enterprise</button>
+        <button class="filter-btn">Mobile</button>
+        <button class="filter-btn">Marketing</button>
+      </div>
+
+      <div class="portfolio-full-grid">
+        <div class="portfolio-full-card featured fade-up">
+          <div class="portfolio-full-bg" style="background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);"></div>
+          <div class="portfolio-full-pattern"></div>
+          <div class="portfolio-full-content">
+            <span class="portfolio-tag">Government Portal</span>
+            <h3>National Digital Services Platform</h3>
+            <p>A comprehensive platform serving 2M+ citizens with secure access to government services, document management, and real-time notifications.</p>
+            <div class="portfolio-full-tags">
+              <span class="portfolio-full-tag">React</span>
+              <span class="portfolio-full-tag">Node.js</span>
+              <span class="portfolio-full-tag">PostgreSQL</span>
+              <span class="portfolio-full-tag">AWS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-full-card fade-up fade-up-delay-1">
+          <div class="portfolio-full-bg" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);"></div>
+          <div class="portfolio-full-pattern"></div>
+          <div class="portfolio-full-content">
+            <span class="portfolio-tag">Mobile App</span>
+            <h3>WestPay Mobile Banking</h3>
+            <p>Next-gen mobile banking app serving 500K+ users across West Africa with secure transactions and financial insights.</p>
+            <div class="portfolio-full-tags">
+              <span class="portfolio-full-tag">Flutter</span>
+              <span class="portfolio-full-tag">Firebase</span>
+              <span class="portfolio-full-tag">Stripe</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-full-card fade-up fade-up-delay-2">
+          <div class="portfolio-full-bg" style="background: linear-gradient(135deg, #18181b 0%, #27272a 100%);"></div>
+          <div class="portfolio-full-pattern"></div>
+          <div class="portfolio-full-content">
+            <span class="portfolio-tag">Enterprise Platform</span>
+            <h3>LogiTrack Supply Chain</h3>
+            <p>End-to-end supply chain management platform with real-time tracking, analytics, and automated workflows.</p>
+            <div class="portfolio-full-tags">
+              <span class="portfolio-full-tag">Vue.js</span>
+              <span class="portfolio-full-tag">Python</span>
+              <span class="portfolio-full-tag">Redis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-full-card fade-up fade-up-delay-1">
+          <div class="portfolio-full-bg" style="background: linear-gradient(135deg, #1c1917 0%, #292524 100%);"></div>
+          <div class="portfolio-full-pattern"></div>
+          <div class="portfolio-full-content">
+            <span class="portfolio-tag">Digital Marketing</span>
+            <h3>Global Brand Transformation</h3>
+            <p>360° digital marketing campaign that increased online presence by 400% and drove 2M+ impressions in 6 months.</p>
+            <div class="portfolio-full-tags">
+              <span class="portfolio-full-tag">SEO</span>
+              <span class="portfolio-full-tag">PPC</span>
+              <span class="portfolio-full-tag">Social Media</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-full-card fade-up fade-up-delay-2">
+          <div class="portfolio-full-bg" style="background: linear-gradient(135deg, #0c0a09 0%, #1c1917 100%);"></div>
+          <div class="portfolio-full-pattern"></div>
+          <div class="portfolio-full-content">
+            <span class="portfolio-tag">Government System</span>
+            <h3>Health Records Management</h3>
+            <p>Secure digital health records system for a national healthcare provider, managing 500K+ patient records.</p>
+            <div class="portfolio-full-tags">
+              <span class="portfolio-full-tag">Angular</span>
+              <span class="portfolio-full-tag">.NET</span>
+              <span class="portfolio-full-tag">SQL Server</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section section-alt">
+    <div class="cta-glow"></div>
+    <div class="container">
+      <h2 class="fade-up">Have a project in mind?</h2>
+      <p class="fade-up fade-up-delay-1">Let's discuss how we can bring your vision to life.</p>
+      <a href="contact.html" class="btn-primary fade-up fade-up-delay-2">
+        Start a Conversation
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+<a href="../index.html" class="logo">Comeliness</a>
+          <p>Software development and digital marketing company delivering innovative solutions for governments and enterprises worldwide.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Software Dev</a></li>
+            <li><a href="services.html">Digital Marketing</a></li>
+            <li><a href="services.html">Mobile Apps</a></li>
+            <li><a href="services.html">Cloud Solutions</a></li>
+            <li><a href="services.html">Graphics Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@comeliness.com">hello@comeliness.com</a></li>
+            <li><a href="tel:+2341234567890">+234 123 456 7890</a></li>
+            <li><a href="#">Lagos, Nigeria</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Comeliness. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="GitHub">&#9679;</a>
+          <a href="#" aria-label="Instagram">&#9679;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

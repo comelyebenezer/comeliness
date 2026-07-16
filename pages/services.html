@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Comeliness</title>
+  <meta name="description" content="Explore Comeliness services — software development, digital marketing, mobile apps, cloud solutions, and more.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>C</text></svg>">
+  <style>
+    .service-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: 80px 0;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .service-detail:last-child {
+      border-bottom: none;
+    }
+    .service-detail:nth-child(even) {
+      direction: rtl;
+    }
+    .service-detail:nth-child(even) > * {
+      direction: ltr;
+    }
+    .service-detail-content .section-label {
+      text-align: left;
+    }
+    .service-detail-content h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .service-detail-content p {
+      font-size: 1rem;
+      color: var(--grey-400);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .service-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .service-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--grey-300);
+    }
+    .service-feature-icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--grey-800);
+      border-radius: 6px;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+    .service-detail-visual {
+      aspect-ratio: 4/3;
+      background: var(--grey-900);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-detail-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--grey-800) 0%, var(--grey-900) 100%);
+    }
+    .service-detail-visual svg {
+      position: relative;
+      z-index: 1;
+      color: var(--grey-600);
+    }
+    @media (max-width: 768px) {
+      .service-detail {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 48px 0;
+      }
+      .service-detail:nth-child(even) {
+        direction: ltr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="page-transition"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="logo">Comeliness</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label fade-up">What We Do</span>
+      <h1 class="fade-up fade-up-delay-1">Our Services</h1>
+      <p class="fade-up fade-up-delay-2">End-to-end digital solutions tailored for governments and enterprises worldwide.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL -->
+  <section class="section">
+    <div class="container">
+      <div class="service-detail fade-up">
+        <div class="service-detail-content">
+          <span class="section-label">01</span>
+          <h2>Software Development</h2>
+          <p>We build custom enterprise software, SaaS platforms, and mission-critical systems that handle the most demanding requirements. Our solutions are secure, scalable, and built to last.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Custom Enterprise Applications
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              SaaS Platform Development
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              API Development & Integration
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Legacy System Modernization
+            </div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+      </div>
+
+      <div class="service-detail fade-up">
+        <div class="service-detail-content">
+          <span class="section-label">02</span>
+          <h2>Digital Marketing</h2>
+          <p>Data-driven marketing strategies that deliver measurable results. From SEO to full-funnel campaigns, we help organizations reach their audience and achieve their goals.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Search Engine Optimization (SEO)
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Pay-Per-Click (PPC) Campaigns
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Social Media Marketing
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Content Strategy & Creation
+            </div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+      </div>
+
+      <div class="service-detail fade-up">
+        <div class="service-detail-content">
+          <span class="section-label">03</span>
+          <h2>Mobile Development</h2>
+          <p>Native and cross-platform mobile applications that deliver exceptional user experiences. We build apps that scale to millions of users.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              iOS & Android Development
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Cross-Platform (React Native, Flutter)
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              App Store Optimization
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Push Notifications & Analytics
+            </div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+      </div>
+
+      <div class="service-detail fade-up">
+        <div class="service-detail-content">
+          <span class="section-label">04</span>
+          <h2>Web Development</h2>
+          <p>High-performance websites and web applications built with modern technologies. From corporate sites to complex web platforms.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Corporate & Portfolio Websites
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              E-commerce Platforms
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Web Applications (SPA/PWA)
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              CMS Development
+            </div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+      </div>
+
+      <div class="service-detail fade-up">
+        <div class="service-detail-content">
+          <span class="section-label">05</span>
+          <h2>UI/UX Design</h2>
+          <p>User-centered design that creates intuitive, accessible, and visually compelling digital experiences. We design with purpose.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              User Research & Testing
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Wireframing & Prototyping
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Visual Design Systems
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Accessibility Compliance (WCAG)
+            </div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        </div>
+      </div>
+
+      <div class="service-detail fade-up">
+        <div class="service-detail-content">
+          <span class="section-label">06</span>
+          <h2>Graphics Design</h2>
+          <p>Creative visual solutions that communicate your brand story. From logos to full brand identities, we design assets that make lasting impressions.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Logo & Brand Identity
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Print & Packaging Design
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Social Media Graphics
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Presentations & Pitch Decks
+            </div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="7" r="3"/></svg>
+        </div>
+      </div>
+
+      <div class="service-detail fade-up">
+        <div class="service-detail-content">
+          <span class="section-label">07</span>
+          <h2>Cloud Solutions</h2>
+          <p>Scalable cloud infrastructure, migration, and management. We help organizations leverage the cloud for efficiency and growth.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Cloud Migration Strategy
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              AWS, Azure & Google Cloud
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              DevOps & CI/CD Pipelines
+            </div>
+            <div class="service-feature">
+              <span class="service-feature-icon">&#10003;</span>
+              Infrastructure as Code (IaC)
+            </div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section section-alt">
+    <div class="cta-glow"></div>
+    <div class="container">
+      <h2 class="fade-up">Need a custom solution?</h2>
+      <p class="fade-up fade-up-delay-1">Tell us about your project and we'll create a tailored approach.</p>
+      <a href="contact.html" class="btn-primary fade-up fade-up-delay-2">
+        Discuss Your Project
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+<a href="../index.html" class="logo">Comeliness</a>
+          <p>Software development and digital marketing company delivering innovative solutions for governments and enterprises worldwide.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Software Dev</a></li>
+            <li><a href="services.html">Digital Marketing</a></li>
+            <li><a href="services.html">Mobile Apps</a></li>
+            <li><a href="services.html">Cloud Solutions</a></li>
+            <li><a href="services.html">Graphics Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@comeliness.com">hello@comeliness.com</a></li>
+            <li><a href="tel:+2341234567890">+234 123 456 7890</a></li>
+            <li><a href="#">Lagos, Nigeria</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Comeliness. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="GitHub">&#9679;</a>
+          <a href="#" aria-label="Instagram">&#9679;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
