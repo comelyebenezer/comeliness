@@ -714,6 +714,9 @@ img {
   transition: all 0.4s var(--transition);
   cursor: pointer;
   aspect-ratio: 16/10;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .portfolio-card:first-child {
