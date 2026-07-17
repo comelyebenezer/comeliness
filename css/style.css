@@ -759,14 +759,14 @@ img {
 .portfolio-tag {
   display: inline-block;
   padding: 4px 12px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.15);
   backdrop-filter: blur(10px);
   border-radius: 100px;
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--grey-200);
+  color: #cccccc;
   margin-bottom: 12px;
   width: fit-content;
 }
@@ -774,11 +774,12 @@ img {
 .portfolio-card-content h3 {
   font-size: 1.4rem;
   margin-bottom: 8px;
+  color: #ffffff;
 }
 
 .portfolio-card-content p {
   font-size: 0.88rem;
-  color: var(--grey-400);
+  color: #aaaaaa;
   max-width: 400px;
 }
 
@@ -1945,23 +1946,6 @@ img {
   background-image: 
     radial-gradient(circle at 25% 25%, var(--grey-400) 1px, transparent 1px),
     radial-gradient(circle at 75% 75%, var(--grey-400) 1px, transparent 1px);
-}
-
-[data-theme="light"] .portfolio-card-content {
-  background: linear-gradient(to top, rgba(255,255,255,0.9) 0%, transparent 60%);
-}
-
-[data-theme="light"] .portfolio-card-content h3 {
-  color: var(--black);
-}
-
-[data-theme="light"] .portfolio-card-content p {
-  color: var(--grey-500);
-}
-
-[data-theme="light"] .portfolio-tag {
-  background: rgba(0,0,0,0.08);
-  color: var(--grey-600);
 }
 
 [data-theme="light"] .hero-slide-tag {
