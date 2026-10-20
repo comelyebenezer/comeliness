@@ -193,6 +193,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==================== CONTACT FORM ====================
+const budgetInput = document.getElementById('budget');
+const budgetRange = document.getElementById('budgetRange');
+if (budgetInput && budgetRange) {
+  budgetRange.addEventListener('input', () => {
+    budgetInput.value = budgetRange.value;
+  });
+  budgetInput.addEventListener('input', () => {
+    const val = Math.max(1000, Math.min(200000, Number(budgetInput.value) || 1000));
+    budgetRange.value = val;
+  });
+}
+
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
@@ -214,6 +226,10 @@ if (contactForm) {
       btn.style.color = '';
       btn.disabled = false;
       this.reset();
+      if (budgetInput && budgetRange) {
+        budgetInput.value = 15000;
+        budgetRange.value = 15000;
+      }
     }, 3000);
   });
 }

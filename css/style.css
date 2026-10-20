@@ -434,7 +434,7 @@ img {
 .hero-slide-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.1;
+  opacity: 0.04;
   background-image: 
     radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
     radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px);
@@ -447,7 +447,7 @@ img {
   left: 0;
   right: 0;
   padding: 40px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 45%, transparent 100%);
 }
 
 .hero-slide-tag {
@@ -1199,6 +1199,95 @@ img {
   gap: 20px;
 }
 
+.budget-control {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.budget-value {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--grey-900);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 0 16px;
+  color: var(--grey-300);
+  font-size: 0.92rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.3s var(--transition);
+  width: fit-content;
+}
+
+.budget-value:focus-within {
+  border-color: var(--grey-500);
+}
+
+.budget-value input {
+  width: 130px;
+  padding: 14px 0;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 0.92rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  -moz-appearance: textfield;
+}
+
+.budget-value input::-webkit-outer-spin-button,
+.budget-value input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.budget-control input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  padding: 0;
+  background: var(--grey-900);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+
+.budget-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--grey-500);
+  cursor: grab;
+  transition: transform 0.2s var(--transition);
+}
+
+.budget-control input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.budget-control input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--grey-500);
+  cursor: grab;
+}
+
+.budget-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--grey-400);
+  font-family: 'Inter', sans-serif;
+}
+
 .contact-form .btn-primary {
   width: 100%;
   justify-content: center;
@@ -1506,6 +1595,7 @@ img {
 .marquee-track {
   display: inline-flex;
   gap: 80px;
+  align-items: center;
   animation: marquee 25s linear infinite;
 }
 
@@ -1522,7 +1612,7 @@ img {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--grey-600);
+  color: #ffffff;
   letter-spacing: 3px;
   text-transform: uppercase;
   display: inline-flex;
@@ -1531,11 +1621,38 @@ img {
   flex-shrink: 0;
 }
 
+[data-theme="light"] .marquee-item {
+  color: #000000;
+}
+
+.marquee-item img {
+  height: 32px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.1);
+  opacity: 0.65;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+.marquee-item img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+[data-theme="light"] .marquee-item img {
+  filter: grayscale(1) brightness(0.9);
+}
+
 .marquee-item .dot {
   width: 6px;
   height: 6px;
-  background: var(--grey-600);
+  background: #ffffff;
   border-radius: 50%;
+}
+
+[data-theme="light"] .marquee-item .dot {
+  background: #000000;
 }
 
 /* ==================== CURSOR GLOW ==================== */
@@ -2085,11 +2202,6 @@ img {
     aspect-ratio: 16/12;
     max-height: 400px;
     width: 100%;
-    display: block;
-  }
-
-  .hero-slide {
-    display: block;
   }
 
   .hero-slide-content {
@@ -2371,7 +2483,7 @@ img {
 
   .hero-slide {
     border-radius: 16px;
-    display: block;
+  }
   }
 
   .hero-slide-content {
